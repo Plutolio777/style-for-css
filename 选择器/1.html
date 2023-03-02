@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="1.css"> -->
+</head>
+<body>
+    <h1>标签选择器</h1>
+    <h2>并列选择器1</h2>
+    <h3>并列选择器2</h3>
+    <div class="success">操作成功</div>
+    <div class="error">操作失败</div>
+    <div id="content">id选择器</div>
+    <style>
+        /* 全部选择器 */
+        * {
+            color: red;
+        }
+        
+        /* 
+            全部选择器范围很管 
+        
+        */
+
+        /* 标签选择器 */
+        h1 {
+            color: brown;
+        }
+        /* 并列选择器 */
+        h2, h3 {
+            color: blue;
+        }
+        
+        
+        /* 类选择器 */
+        .success {
+            color: chartreuse;
+        }
+        .error {
+            background-color: black;
+        }
+        /* id 选择器 */
+
+        #content {
+            border: solid 1px;
+        }
+
+        /* 结构选择器 */
+
+        /* 孩子选择器 
+           只管article的孩子为h2的标签
+        */
+        main article>h2{
+            color: black;
+        }
+        /* 兄弟选择器
+            1.~ 选择与h1同级的h2
+            2.+ 相邻的第一个兄弟
+        */
+        article h1~h2 {}
+        article h1+h2 {}
+        /* 属性选择器 */
+        h1[title] {
+            /* 包含title属性的h1标签 */
+        }
+        h1[title="tian"] {
+            /* 属性title的属性值为 tian 的h1标签 */
+        }
+        h1[title^="tian"]{
+            /* 属性title的值以 tian 开始的h1标签 */
+        }
+        h1[title$="tian"]{
+            /* 属性title的值以 tian 结尾的h1标签 */
+        }
+        h1[title*="tian"]{
+            /* 属性title的值包含 tian 的h1标签 */
+        }
+        h1[title~="tian"]{
+            /* 属性title的值包含 一个独立的词 tian 的h1标签 */
+        }
+        h1[title|="tian"]{
+            /* 
+            只有 tian-xxx 的h1才会选中 */
+        }
+    </style>
+</body>
+</html>
